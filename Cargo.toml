@@ -1,0 +1,11 @@
+[workspace]
+members = [
+    "pos-core",
+    "plugins/solana-pay-request"
+, "pos-gpio"]
+resolver = "2"
+
+[profile.release]
+opt-level = "s"
+lto = true
+strip = true

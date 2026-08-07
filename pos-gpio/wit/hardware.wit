@@ -1,0 +1,18 @@
+package pos:gpio@0.1.0;
+
+/// A interface que o Agente de IA pode acessar
+interface controller {
+    /// Aciona o sinal de aguardando pagamento (LED Amarelo)
+    set-payment-pending: func() -> result<_, string>;
+
+    /// Aciona o sinal de sucesso (LED Verde + Bipe)
+    set-payment-success: func() -> result<_, string>;
+
+    /// Aciona o alarme de erro (LED Vermelho + Bipe longo)
+    sound-error-alarm: func() -> result<_, string>;
+}
+
+/// O "Mundo" exporta a interface para o runtime do ZeroClaw
+world gpio-plugin {
+    export controller;
+}

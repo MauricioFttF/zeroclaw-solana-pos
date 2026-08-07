@@ -1,0 +1,50 @@
+name = "solana-pay-request"
+version = "0.2.0"
+
+description = """
+Gera uma cobrança Solana Pay para um ponto de venda.
+
+IMPORTANTE:
+
+- O campo amount_brl SEMPRE representa um valor em Reais (BRL).
+
+- Nunca envie valores em SOL.
+
+- Nunca faça conversão de moeda.
+
+- O plugin converte automaticamente BRL para SOL utilizando a cotação interna.
+
+— nunca aceita o endereço como argumento vindo do LLM.
+
+Exemplos:
+
+Usuário:
+"Cobrar 25 reais"
+
+Tool:
+{
+    "amount_brl":25,
+    "memo":""
+}
+
+Usuário:
+"Cobrar R$800 da mesa 4"
+
+Tool:
+{
+    "amount_brl":800,
+    "memo":"mesa 4"
+}
+"""
+
+author = "Mauricio"
+
+wasm_path = "solana_pay_request.wasm"
+
+capabilities = [
+    "tool"
+]
+
+permissions = [
+    "config_read"
+]

@@ -1,0 +1,11 @@
+[package]
+name = "pos-gpio"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+wit-bindgen = "0.41.0"
+# rppal = "0.16.1" # Dependência para controle de GPIO no Raspberry Pi (Comentada para ambiente WASM)
+
+[package.metadata.component]
+package = "pos:gpio"
